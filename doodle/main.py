@@ -5,7 +5,7 @@ def app_factory() -> Flask:
     app = Flask(__name__)
 
     @app.get("/")
-    def docs():
+    async def docs():
         return "Pretend there are docs here..."
 
     @app.get("/")
