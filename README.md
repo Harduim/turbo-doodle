@@ -5,3 +5,9 @@ A simple issue tracking system for testing async Flask 3, Pydantic 2 and Couchba
 ## Quick-start
 
 Don't. This is repo is not supposed to be used other than for educational purposes.
+
+
+## Setup local Couchbase
+
+- http://localhost:8091
+
