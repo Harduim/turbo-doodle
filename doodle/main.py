@@ -8,7 +8,7 @@ def app_factory() -> Flask:
     async def docs():
         return "Pretend there are docs here..."
 
-    @app.get("/")
+    @app.get("/health")
     def health():
         return "OK"
 
