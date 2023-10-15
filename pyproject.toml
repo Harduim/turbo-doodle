@@ -10,6 +10,7 @@ dependencies = [
   "python-dotenv~=1.0",
   "pydantic~=2.4",
   "gunicorn~=21.2",
+  "couchbase~=4.1",
 ]
 
 
