@@ -8,4 +8,8 @@ def app_factory() -> Flask:
     def docs():
         return "Pretend there are docs here..."
 
+    @app.get("/")
+    def health():
+        return "OK"
+
     return app
