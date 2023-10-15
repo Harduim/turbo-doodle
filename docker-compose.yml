@@ -1,0 +1,28 @@
+version: "3.9"
+name: "doodle_dev"
+services:
+  doodle_backend:
+    container_name: doodle_backend
+    build:
+      context: .
+    restart: "no"
+    healthcheck:
+      test:
+        ["CMD", "wget", "-qO", "-", "http://127.0.0.1:${SERVER_PORT}/health"]
+      interval: 20s
+      timeout: 5s
+      retries: 3
+    depends_on:
+      - doodle_db
+    environment:
+      - SERVER_PORT=$SERVER_PORT
+      - SERVER_HOST=$SERVER_HOST
+    volumes:
+      - ${DEV_FOLDER}:/opt/doodle
+
+  doodle_db:
+    container_name: doodle_db
+    image: couchbase:community-7.2.2
+    ports:
+      - 127.0.0.1:8091-8096:8091-8096
+      - 127.0.0.1:11210:11210
