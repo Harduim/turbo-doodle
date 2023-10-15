@@ -18,7 +18,7 @@ RUN apt update \
 RUN addgroup --gid "${SERVICE_GID}" "${SERVICE_NAME}"
 RUN adduser --quiet "${SERVICE_NAME}" --uid "${SERVICE_UID}" --gid "${SERVICE_GID}"
 RUN mkdir "${SERVICE_PATH}"
-RUN mkdir /var/log/"{$SERVICE_NAME}"/
+RUN mkdir /var/log/"${SERVICE_NAME}"/
 RUN mkdir "${SERVICE_PATH}"/reports
 RUN mkdir "${SERVICE_PATH}"/static
 RUN chown -R "${SERVICE_NAME}":"${SERVICE_NAME}" "${SERVICE_PATH}"
