@@ -5,7 +5,12 @@ readme = "README.md"
 license = { file = "LICENSE" }
 classifiers = ["License :: OSI Approved :: MIT License"]
 dynamic = ["version", "description"]
-dependencies = ["Flask~=3.0", "python-dotenv~=1.0", "pydantic~=2.4"]
+dependencies = [
+  "Flask~=3.0",
+  "python-dotenv~=1.0",
+  "pydantic~=2.4",
+  "gunicorn~=21.2",
+]
 
 
 [project.urls]
